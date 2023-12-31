@@ -1,15 +1,15 @@
 # simple-queue
 
-To install dependencies:
-
-```bash
-bun install
-```
-
 To run:
 
 ```bash
+docker run -v $(pwd):/usr/src/app -p 3000:3000 --name simple-queue -d simple-queue-bun:latest
+docker exec simple-queue bun install
+docker exec simple-queue bun dev
 bun run index.js
 ```
 
-This project was created using `bun init` in bun v1.0.18. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+To run tests:
+```bash
+docker exec simple-queue bun test
+```
