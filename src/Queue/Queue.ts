@@ -12,7 +12,7 @@ export class Queue<T> implements IQueue<T> {
 			return this.#queue.shift() ?? null
 		}
 
-		let queueIndex = this.#queue.findIndex((item) => callback(item))
+		let queueIndex = this.#queue.findIndex(callback)
 		if (queueIndex === -1) { return null }
 
 		let queue = this.#queue[queueIndex]
