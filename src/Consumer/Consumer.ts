@@ -20,7 +20,12 @@ export class Consumer implements IConsumer {
 		return this.#messageId
 	}
 
+	success() {
+		this.#messageId = null
+	}
+
 	sendMessage(message: IMessage) {
+		console.log(`Send message: ${message.id} to consumer: ${this.#id}`)
 		message.consumer = this.#id
 		this.#messageId = message.id
 

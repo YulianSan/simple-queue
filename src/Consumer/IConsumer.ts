@@ -5,4 +5,5 @@ export interface IConsumer {
 	get messageId(): string | null
 	get available(): boolean
 	sendMessage(queue: IMessage): void
+	success(): void
 }
