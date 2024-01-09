@@ -13,7 +13,7 @@ describe("Queue", () => {
 		queue.enqueue(2)
 		queue.enqueue(3)
 
-		expect(queue.size).toBe(4)
+		expect(queue.size).toBe(3)
 	})
 
 	it("should dequeue items", () => {
