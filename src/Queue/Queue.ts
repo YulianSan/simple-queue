@@ -13,13 +13,13 @@ export class Queue<T> implements IQueue<T> {
 		}
 
 		let queueIndex = this.#queue.findIndex(callback)
-		if (queueIndex === -1) { return null }
+		if (queueIndex === -1 || !this.#queue[queueIndex]) { return null }
 
 		let queue = this.#queue[queueIndex]
 
 		this.#queue.splice(queueIndex, 1)
 
-		return queue ?? null
+		return queue
 	}
 
 	get size() {

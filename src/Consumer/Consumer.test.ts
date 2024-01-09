@@ -56,4 +56,17 @@ describe('Consumer', () => {
 
 		expect(consumer.available).toBeTrue()
 	})
+
+	it('should be available after success', () => {
+		const consumer = new Consumer('id', ws)
+		const message = {
+			id: 'message',
+			consumer: 'id',
+		} as any
+
+		consumer.sendMessage(message)
+		expect(consumer.available).toBeFalse()
+		consumer.success()
+		expect(consumer.available).toBeTrue()
+	})
 })

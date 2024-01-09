@@ -44,8 +44,8 @@ describe("Queue", () => {
 		expect(queue.dequeue()).toBeNull()
 	})
 
-	it("should return null when queue is empty by callback", () => {
-		expect(queue.dequeue((item) => item % 2 === 0)).toBe(null)
+	it("should return null when queue is empty and callback is provided", () => {
+		expect(queue.dequeue((item) => item % 2 === 0)).toBeNull()
 	})
 
 	it("should return null when callback return always false", () => {
